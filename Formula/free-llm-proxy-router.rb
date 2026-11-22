@@ -5,13 +5,13 @@
 class FreeLlmProxyRouter < Formula
   desc "One OpenAI-compatible endpoint over every free LLM API tier"
   homepage "https://github.com/kaiser-data/free-llm-proxy-router"
-  version "0.1.9"
+  version "0.1.10"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.9/free-llm-proxy-router_0.1.9_darwin_amd64.tar.gz"
-      sha256 "28ce5b07971a60382d73c68dc5fe1184a5f699a592fa1b7e4bef481e66265c45"
+      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.10/free-llm-proxy-router_0.1.10_darwin_amd64.tar.gz"
+      sha256 "53028db8775ec467a0ab4a5e43534528e975061b2d9546a0ee7e72dba02749c8"
 
       define_method(:install) do
         libexec.install "free-llm-proxy", "free-llm-scan", "free-llm-bench", "configs"
@@ -19,8 +19,8 @@ class FreeLlmProxyRouter < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.9/free-llm-proxy-router_0.1.9_darwin_arm64.tar.gz"
-      sha256 "e6e5681c5e44c7e211d78b109a888058c0b2a3df2abbea7f69a6ca83c1bd106c"
+      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.10/free-llm-proxy-router_0.1.10_darwin_arm64.tar.gz"
+      sha256 "c70fe2a6a1be4f1bf5cc4604eb85f0eb54838b6d8b4c720d7f3692cccf5e27b6"
 
       define_method(:install) do
         libexec.install "free-llm-proxy", "free-llm-scan", "free-llm-bench", "configs"
@@ -31,24 +31,24 @@ class FreeLlmProxyRouter < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.9/free-llm-proxy-router_0.1.9_linux_amd64.tar.gz"
-      sha256 "b3d73b812d0bf501cea0628d78364a1890bbb18a581347c3d76fbecb72172a17"
+      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.10/free-llm-proxy-router_0.1.10_linux_amd64.tar.gz"
+      sha256 "1ae98ebb9579b4805d9a34cb3a436a238fad4758d93279b1d3f3e893db5d08c4"
       define_method(:install) do
         libexec.install "free-llm-proxy", "free-llm-scan", "free-llm-bench", "configs"
         bin.install_symlink libexec/"free-llm-proxy", libexec/"free-llm-scan", libexec/"free-llm-bench"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.9/free-llm-proxy-router_0.1.9_linux_armv6.tar.gz"
-      sha256 "c1e27c28f7e956ca5426c5a1d36cd30b204f08d52e1c89b0a1a0017a2002f3cb"
+      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.10/free-llm-proxy-router_0.1.10_linux_armv6.tar.gz"
+      sha256 "90d01842a64c7443c0d5d9f81462b025d6269b94dd1b239493c8598a833b618d"
       define_method(:install) do
         libexec.install "free-llm-proxy", "free-llm-scan", "free-llm-bench", "configs"
         bin.install_symlink libexec/"free-llm-proxy", libexec/"free-llm-scan", libexec/"free-llm-bench"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.9/free-llm-proxy-router_0.1.9_linux_arm64.tar.gz"
-      sha256 "b8868344f01635675096fd40c4b79658af24bbf755cc64905f9099cc0b6d71dc"
+      url "https://github.com/kaiser-data/free-llm-proxy-router/releases/download/v0.1.10/free-llm-proxy-router_0.1.10_linux_arm64.tar.gz"
+      sha256 "b5a80fb86869443badcdd8b1b5b466dbf0faba71acf14fe9a5506c2db6c295ff"
       define_method(:install) do
         libexec.install "free-llm-proxy", "free-llm-scan", "free-llm-bench", "configs"
         bin.install_symlink libexec/"free-llm-proxy", libexec/"free-llm-scan", libexec/"free-llm-bench"
